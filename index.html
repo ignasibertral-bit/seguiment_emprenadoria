@@ -23,7 +23,7 @@ const previous={
  'Grup 1':'red','Grup 2':'yellow','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
 };
 const today={
- 'Grup 1':'yellow','Grup 2':'green','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
+ 'Grup 1':'red','Grup 2':'green','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
 };
 const labels={green:['Verd','Bon treball i actitud'],yellow:['Groc','Cal millorar algun dels aspectes de treball i actitud'],red:['Vermell','Actitud molt negativa'],pending:['Pendent','Encara no avaluat']};
 function cell(status){const [key,text]=labels[status||'pending'];return `<td class="cell"><span class="status ${status||'pending'}" title="${text}"><i class="dot"></i></span></td>`}
