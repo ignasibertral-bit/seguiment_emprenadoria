@@ -12,7 +12,7 @@
 <body>
 <main class="wrap">
 <header><h1>Emprenedoria · Pla d’empresa</h1><p class="subtitle">Seguiment del treball i l’actitud de cada grup en les sessions del projecte.</p><div class="legend"><span class="badge green"><i class="dot"></i>Verd · Bon treball i actitud</span><span class="badge yellow"><i class="dot"></i>Groc · Cal millorar algun dels aspectes de treball i actitud</span><span class="badge red"><i class="dot"></i>Vermell · Actitud molt negativa</span><span class="badge pending"><i class="dot"></i>Pendent d’avaluar</span></div></header>
-<section class="panel"><h2>Evolució per sessions</h2><p class="small">Tots els grups poden consultar aquesta informació. El semàfor és formatiu i pot canviar en cada sessió.</p><div class="table-wrap"><table><thead><tr><th>Grup</th><th>2 nov. 2026 · AVUI</th><th>23 oct. 2026</th><th>26 oct. 2026</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="panel"><h2>Evolució per sessions</h2><p class="small">Tots els grups poden consultar aquesta informació. El semàfor és formatiu i pot canviar en cada sessió.</p><div class="table-wrap"><table><thead><tr><th>Grup</th><th>23 oct. 2026</th><th>26 oct. 2026</th><th>2 nov. 2026 · AVUI</th></tr></thead><tbody id="rows"></tbody></table></div></section>
 <footer>Última actualització: pendent de la primera valoració de la sessió.</footer>
 </main>
 <script>
@@ -22,13 +22,16 @@ const groups=[
 const previous={
  'Grup 1':'red','Grup 2':'yellow','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
 };
+const session26={
+ 'Grup 1':'red','Grup 2':'green','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
+};
 const today={
  'Grup 1':'yellow','Grup 2':'green','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
 };
 const labels={green:['Verd','Bon treball i actitud'],yellow:['Groc','Cal millorar algun dels aspectes de treball i actitud'],red:['Vermell','Actitud molt negativa'],pending:['Pendent','Encara no avaluat']};
 function cell(status){const [key,text]=labels[status||'pending'];return `<td class="cell"><span class="status ${status||'pending'}" title="${text}"><i class="dot"></i></span></td>`}
 const rows=document.querySelector('#rows');
-groups.forEach(([name,members])=>{const tr=document.createElement('tr');tr.innerHTML=`<td><span class="group">${name}</span><span class="members">${members}</span></td>${cell(today[name])}${cell(previous[name])}${cell(today[name])}`;rows.appendChild(tr)});
+groups.forEach(([name,members])=>{const tr=document.createElement('tr');tr.innerHTML=`<td><span class="group">${name}</span><span class="members">${members}</span></td>${cell(previous[name])}${cell(session26[name])}${cell(today[name])}`;rows.appendChild(tr)});
 </script>
 </body>
 </html>
