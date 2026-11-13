@@ -31,13 +31,16 @@ const session6={
 const session9={
  'Grup 1':'green','Grup 2':'green','Grup 3':'green','Grup 4':'yellow','Grup 5':'green','Grup 6':'yellow','Grup 7':'green','Grup 8':'green','Grup 9':'green'
 };
-const today={
+const session2={
+ 'Grup 1':'yellow','Grup 2':'green','Grup 3':'green','Grup 4':'green','Grup 5':'green','Grup 6':'green','Grup 7':'green','Grup 8':'green','Grup 9':'green'
+};
+const today13={
  'Grup 1':'green','Grup 2':'green','Grup 3':'green','Grup 4':'yellow','Grup 5':'green','Grup 6':'yellow','Grup 7':'green','Grup 8':'green','Grup 9':'green'
 };
 const labels={green:['Verd','Bon treball i actitud'],yellow:['Groc','Cal millorar algun dels aspectes de treball i actitud'],red:['Vermell','Actitud molt negativa'],pending:['Pendent','Encara no avaluat']};
 function cell(status){const [key,text]=labels[status||'pending'];return `<td class="cell"><span class="status ${status||'pending'}" title="${text}"><i class="dot"></i></span></td>`}
 const rows=document.querySelector('#rows');
-groups.forEach(([name,members])=>{const tr=document.createElement('tr');tr.innerHTML=`<td><span class="group">${name}</span><span class="members">${members}</span></td>${cell(previous[name])}${cell(session26[name])}${cell(today[name])}${cell(session6[name])}${cell(session9[name])}${cell()}`;rows.appendChild(tr)});
+groups.forEach(([name,members])=>{const tr=document.createElement('tr');tr.innerHTML=`<td><span class="group">${name}</span><span class="members">${members}</span></td>${cell(previous[name])}${cell(session26[name])}${cell(session2[name])}${cell(session6[name])}${cell(session9[name])}${cell(today13[name])}`;rows.appendChild(tr)});
 </script>
 </body>
 </html>
